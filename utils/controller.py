@@ -13,3 +13,11 @@ def delete_user(users_data:list)->None:
     for user in users_data:
         if user["name"] == username:
             users_data.remove(user)
+
+def update_user(users_data: list) -> None:
+    user_name: str = input('Wpisz kogo chcesz zmodyfikować: ')
+    for user in users_data:
+        if user['name'] == user_name:
+            user['name'] = input('Podaj nowe imie: ')
+            user['location'] = input('Podaj nowa lokalizację: ')
+            user['posts'] = input('Podaj liczbę postów: ')
