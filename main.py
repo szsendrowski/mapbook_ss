@@ -113,6 +113,7 @@ def show_user_details():
     label_szczegoly_obiektu_miejscowosc_wartosc.config(text=users[i].location)
     label_szczegoly_obiektu_posts_wartosc.config(text=users[i].posts)
 
+
     map_widget.set_zoom(15)
     map_widget.set_position(users[i].cordinates[0], users[i].cordinates[1])
 
