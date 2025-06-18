@@ -4,6 +4,7 @@ import tkintermapview
 
 users: list = []
 
+
 class User:
     def __init__(self, name, surname, location, posts, map_widget):
         self.name = name
@@ -115,6 +116,7 @@ def show_user_details():
     map_widget.set_zoom(15)
     map_widget.set_position(users[i].cordinates[0], users[i].cordinates[1])
 
+
 root = Tk()
 root.geometry("1200x700")
 root.title('mapbook_kt')
@@ -137,13 +139,13 @@ label_lista_obiektow.grid(row=0, column=0)
 listbox_lista_obiektow = Listbox(ramka_lista_obiektow, width=50, height=10)
 listbox_lista_obiektow.grid(row=1, column=0, columnspan=3)
 
-button_pokaz_szczegoly = Button(ramka_lista_obiektow, text="Pokaż szczegóły")
+button_pokaz_szczegoly = Button(ramka_lista_obiektow, text="Pokaż szczegóły", command=show_user_details)
 button_pokaz_szczegoly.grid(row=2, column=0)
 
-button_usun_obiekt = Button(ramka_lista_obiektow, text="Usuń")
+button_usun_obiekt = Button(ramka_lista_obiektow, text="Usuń", command=remove_user)
 button_usun_obiekt.grid(row=2, column=1)
 
-button_edytuj_obiekt = Button(ramka_lista_obiektow, text="Edytuj")
+button_edytuj_obiekt = Button(ramka_lista_obiektow, text="Edytuj", command=edit_user)
 button_edytuj_obiekt.grid(row=2, column=2)
 
 # ramka_formularz
@@ -175,7 +177,7 @@ entry_miejscowosc.grid(row=3, column=1)
 entry_posts = Entry(ramka_formularz)
 entry_posts.grid(row=4, column=1)
 
-button_dodaj_obiekt = Button(ramka_formularz, text="Dodaj")
+button_dodaj_obiekt = Button(ramka_formularz, text="Dodaj", command=add_user)
 button_dodaj_obiekt.grid(row=5, column=0, columnspan=2)
 
 # ramka_szczegoly_obiektow
